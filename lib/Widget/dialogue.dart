@@ -44,10 +44,7 @@ class _CheckDialogState extends State<CheckDialog> {
       elevation: 5,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
       child: Container(
-          decoration:numberOfAjr != 0 ? BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            image: DecorationImage(image: AssetImage("assets/congrats.gif",),fit: BoxFit.fill)
-          ): null,
+
           height: numberOfAjr == 0 ? 130 : 200,
           width: 300,
           child: Padding(
@@ -60,7 +57,6 @@ class _CheckDialogState extends State<CheckDialog> {
                 style: TextStyle(fontSize: 20),
                 textAlign: TextAlign.center,),
                 Spacer(),
-
                 Row(
                   children: [
                     ElevatedButton(
@@ -109,8 +105,17 @@ class _CheckDialogState extends State<CheckDialog> {
 
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("Congratulations, You will get $numberOfAjr Ajr Inshallah. Keep on reciting...",style: TextStyle(fontSize: 18,color: Colors.green, fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
-                ),
+                  child: Text.rich(TextSpan(
+                    children: [
+                      TextSpan(text: "Congratulations, You will get ",style: TextStyle(fontSize: 18,color: Colors.green, fontWeight: FontWeight.bold)),
+                      TextSpan(text: "🪙$numberOfAjr", style: TextStyle(fontSize: 23, color: Colors.amber, fontWeight: FontWeight.bold)),
+                      TextSpan(text: " Ajr Inshallah. Keep on reciting...",style: TextStyle(fontSize: 18,color: Colors.green, fontWeight: FontWeight.bold)),
+                    ],
+                  ),
+                )),
+                Expanded(
+                  child: Image.asset("assets/congrats.gif", fit: BoxFit.fill, width: double.infinity,)
+                )
                 // Image.asset("assets/congrats.gif", height: 100,)
 
 

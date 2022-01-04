@@ -38,6 +38,7 @@ dependencies:
   intl: ^0.17.0
   path_provider: any
   shared_preferences: any
+  speech_to_text: ^5.4.2
 
 dev_dependencies:
   flutter_test:
