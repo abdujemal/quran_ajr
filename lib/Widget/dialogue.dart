@@ -1,6 +1,4 @@
 import 'dart:io';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -45,8 +43,8 @@ class _CheckDialogState extends State<CheckDialog> {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
       child: Container(
 
-          height: numberOfAjr == 0 ? 130 : 200,
-          width: 300,
+          height: 300,
+          width: 350,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: numberOfAjr == 0 ? Column(
@@ -141,7 +139,7 @@ class _CheckDialogState extends State<CheckDialog> {
     int numOfAjr = 0;
     for(var s in selectedAyat){
       for(var j=0;j<s.length;j++){
-        if(countableChars.contains(s.substring(j,j+1))) {
+        if(countableChars.contains(s.substring(j))) {
           numOfAjr++;
         }
       }
